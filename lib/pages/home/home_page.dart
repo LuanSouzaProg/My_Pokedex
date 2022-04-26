@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
           icon: const Icon(Icons.menu),
         ),
         title: const Text(
-          "Pokedex",
+          "Minha Pokedex",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 25,
