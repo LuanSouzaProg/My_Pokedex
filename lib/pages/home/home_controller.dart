@@ -3,6 +3,8 @@ import 'package:app_09/api/services/get_all_pokemon/get_all_pokemon_services_imp
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../core/ui/loader/loader.dart';
+
 class HomeController extends GetxController {
   var allPokemons = <AllPokemons>[].obs;
   var next = "".obs;
