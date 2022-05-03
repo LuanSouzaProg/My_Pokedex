@@ -1,6 +1,12 @@
-import 'package:app_09/pages/home/home_page.dart';
-import 'package:app_09/pages/splash_page/splash_screen.dart';
+import 'package:app_09/core/bindings/application_bindings.dart';
+import 'package:app_09/core/ui/pokedex_ui_config.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:asuka/asuka.dart' as asuka;
+
+import 'modules/details/details_module.dart';
+import 'modules/home/home_module.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -8,15 +14,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/splashPage",
-      routes: {
-        "/splashPage": (context) => const SplashScreen(),
-        "/homePage": (context) => const HomePage()
-      },
+    return GetMaterialApp(
+      builder: asuka.builder,
+      navigatorObservers: [
+        asuka.asukaHeroController
+      ],
+      title: PokedexUiConfig.title,
+      initialBinding: ApplicationBindings(),
+      getPages: [
+        ...HomeModule().routers,
+        ...DetailsModule().routers,
+      ],
     );
   }
 }

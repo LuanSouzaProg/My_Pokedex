@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:app_09/api/repositories/get_all_pokemons/get_all_pokemon_repository.dart';
 import 'package:app_09/api/repositories/get_all_pokemons/get_all_pokemon_repository_impl.dart';
 import 'package:app_09/api/repositories/get_pokemon/get_pokemon_repository.dart';
